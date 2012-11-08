@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filters FTW</title>
+
+    <style>
+        img {
+            -webkit-filter: blur(7px) grayscale(100%);
+        }
+
+        img:hover {
+            -webkit-filter: blur(0px) grayscale(0%);
+        }
+
+        input {
+            display: block;
+            width:40px;
+            height:40px;
+            -webkit-box-shadow: 10px 10px 10px 10px red;
+            box-shadow: 10px 10px 10px 10px red;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
+
+    </style>
+
+    <meta name="viewport" content="maximum-scale=1,minimum-scale=1,initial-scale=1,user-scalable=0">
+</head>
+<body>
+    <input type="color" />
+    <div>
+        <input type="text" />
+    </div>
+
+</body>
+</html>

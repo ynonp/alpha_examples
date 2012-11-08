@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transitions FTW</title>
+    <style>
+        div.container {
+            overflow:hidden;
+            width:100px;
+            height:100px;
+            position: relative;
+        }
+
+        div.container div {
+            width:100px;
+            height:100px;
+            position: absolute;
+            -webkit-transition: all 0.5s;
+        }
+
+        div.a {
+            background: red;
+            left:0;
+        }
+        div.b {
+            background: yellow;
+            left:100%;
+        }
+        div.c {
+            background: orange;
+            left:200%;
+        }
+
+        .move-1 .a { left:-100%; }
+        .move-1 .b { left:0; }
+        .move-1 .c { left:100%; }
+
+        .move-2 .a { left:-200%; }
+        .move-2 .b { left:-100%; }
+        .move-2 .c { left:0; }
+
+    </style>
+    <meta name="viewport" content="user-scalable=0,maximum-scale=1,minimum-scale=1,initial-scale=1" />
+</head>
+<body>
+    <div class="container">
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="c"></div>
+    </div>
+
+    <button>Next</button>
+    <script>
+        var div = document.querySelector('div.container');
+        var btn = document.querySelector('button');
+        var handle_click = function() {
+            if ( div.classList.contains('move-1') ) {
+                div.classList.remove('move-1');
+                div.classList.add('move-2');
+            } else if ( div.classList.contains('move-2') ) {
+                div.classList.remove('move-2');
+            } else {
+                div.classList.add('move-1');
+            }
+        };
+
+        btn.addEventListener('click', handle_click);
+
+    </script>
+</body>
+</html>

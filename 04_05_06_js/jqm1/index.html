@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-position="fixed">
+            <a href="#" class="ui-btn-right">Logout</a>
+            <h1>Welcome to jQM</h1>
+        </div>
+
+        <div data-role="content">
+            <a href="#" data-role="button" data-inline="true">Cancel</a>
+            <a href="#" id="btn-save" data-role="button" data-inline="true" data-theme="b">Save</a>
+            <a href="#page2" data-transition="slide">Read More...</a>
+        </div>
+
+        <ul data-role="listview" id="aquarium">
+            <li><a href="#">Wanda</a></li>
+            <li><a href="#">Flipper</a></li>
+            <li>Nemo</li>
+        </ul>
+
+
+        <form method="POST" action="/">
+            <input type="submit" value="Send" />
+        </form>
+        <div data-role="footer" data-position="fixed">
+            <a href="#">Compose</a>
+            <a href="#">Forward</a>
+            <a href="#">Reply</a>
+        </div>
+    </div>
+
+<script>
+    var btn = document.querySelector('#btn-save');
+
+    btn.addEventListener('click', function() {
+        $('#aquarium').append('<li>Willie</li>');
+        $('#aquarium').listview('refresh');
+    });
+</script>
+
+</body>
+</html>
