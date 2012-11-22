@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.rc.1/handlebars.min.js"></script>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+
+    <script type="text/template" id="tmpl-task">
+        <div class="task">
+            <h3>{{name}}</h3>
+            {{#if done}}
+            <input type="checkbox" checked="checked" />
+            {{else}}
+            <input type="checkbox" />
+            {{/if}}
+        </div>
+    </script>
+
+    <script src="models/task.js"></script>
+
+    <script src="views/task.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
